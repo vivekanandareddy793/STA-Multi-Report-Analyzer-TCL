@@ -1,0 +1,109 @@
+***************************************************************
+Report        : report_timing
+Design        : RISCV_PIPELINE
+Version       : 1.0
+Scenario      : setup
+Analysis Type : Max
+***************************************************************
+
+Startpoint: u_id/u_rs1_reg[31]/Q
+Endpoint:   u_ex/u_operandA_reg[31]/D
+Path Group: CORE_CLK
+Path Type : max
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock CORE_CLK (rise edge)                0.000         0.000
+clock network delay                       0.200         0.200
+u_id/u_rs1_reg[31]/Q                      0.120         0.320
+Register_File_Read                        2.150         2.470
+OperandA_Mux                              1.850         4.320
+routing_delay                             5.400         9.720
+
+Data Arrival Time                                      9.720
+Data Required Time                                    10.170
+
+Slack (MET)                                            0.450
+
+=====================================================================
+
+Startpoint: u_id/u_rs2_reg[31]/Q
+Endpoint:   u_ex/u_operandB_reg[31]/D
+Path Group: CORE_CLK
+Path Type : max
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.200         0.200
+u_id/u_rs2_reg[31]/Q                      0.120         0.320
+Register_File_Read                        2.480         2.800
+OperandB_Mux                              2.250         5.050
+routing_delay                             5.320        10.370
+
+Data Arrival Time                                     10.370
+Data Required Time                                    10.170
+
+Slack (VIOLATED)                                      -0.200
+
+=====================================================================
+
+Startpoint: u_wb/u_writeback_reg[31]/Q
+Endpoint:   u_id/u_regfile_write_reg[31]/D
+Path Group: CORE_CLK
+Path Type : max
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.200         0.200
+u_wb/u_writeback_reg[31]/Q                0.130         0.330
+Write_Data_Mux                            2.820         3.150
+Register_File_Write                       2.600         5.750
+routing_delay                             4.670        10.420
+
+Data Arrival Time                                     10.420
+Data Required Time                                    10.170
+
+Slack (VIOLATED)                                      -0.250
+
+=====================================================================
+
+Startpoint: u_id/u_ctrl_reg[7]/Q
+Endpoint:   u_id/u_decode_ctrl_reg[7]/D
+Path Group: CORE_CLK
+Path Type : max
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.200         0.200
+u_id/u_ctrl_reg[7]/Q                      0.110         0.310
+Decode_Control                            2.700         3.010
+routing_delay                             6.650         9.660
+
+Data Arrival Time                                      9.660
+Data Required Time                                    10.170
+
+Slack (MET)                                            0.510
+
+=====================================================================
+
+Startpoint: u_id/u_branch_reg[15]/Q
+Endpoint:   u_ex/u_branch_operand_reg[15]/D
+Path Group: CORE_CLK
+Path Type : max
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.200         0.200
+u_id/u_branch_reg[15]/Q                   0.120         0.320
+Branch_Select_Mux                         3.120         3.440
+routing_delay                             7.080        10.520
+
+Data Arrival Time                                     10.520
+Data Required Time                                    10.170
+
+Slack (VIOLATED)                                      -0.350

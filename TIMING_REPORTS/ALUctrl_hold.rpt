@@ -1,0 +1,30 @@
+****************************************
+Report : report_timing
+Design : ALUctrl
+Version: OpenSTA
+Scenario      : hold
+Analysis Type : Min
+****************************************
+
+Startpoint: u_decode/u_ctrl_reg[2]/Q
+Endpoint  : u_execute/u_aluctrl_reg[1]/D
+
+Path Group : clk
+Path Type  : min
+
+Point                                         Delay(ns)
+--------------------------------------------------------
+Clock clk (rise edge)                         0.000
+Clock Network Delay                           0.220
+
+u_decode/u_ctrl_reg[2]/Q                      0.000
+control_logic                                 0.240
+opcode_decoder                                0.310
+mux_control                                   0.185
+alu_control_logic                             0.265
+u_execute/u_aluctrl_reg[1]/D                  0.000
+
+Data Arrival Time                             1.220
+Data Required Time                            1.500
+
+Slack (MET)                                   0.280

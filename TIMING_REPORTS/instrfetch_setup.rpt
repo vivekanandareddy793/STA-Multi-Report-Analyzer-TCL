@@ -1,0 +1,44 @@
+***************************************************************
+Report        : report_timing
+Design        : RISCV_PIPELINE
+Version       : 1.0
+Date          : 26-Jun-2026
+Scenario      : setup
+Analysis Type : Max
+***************************************************************
+
+Startpoint: u_if/u_pc_reg[31]/Q
+            (rising edge-triggered flip-flop)
+
+Endpoint:   u_id/u_instr_reg[31]/D
+            (rising edge-triggered flip-flop)
+
+Path Group: SYS_CLK
+Path Type : max
+
+---------------------------------------------------------------------------
+Point                                         Incr(ns)     Path(ns)
+---------------------------------------------------------------------------
+clock SYS_CLK (rise edge)                       0.000        0.000
+clock network delay                             0.180        0.180
+
+u_if/u_pc_reg[31]/Q (CK->Q)                     0.120        0.300
+instruction_memory                              2.350        2.650
+if_id_register                                  0.210        2.860
+instruction_decode                              1.420        4.280
+mux2x1                                          0.180        4.460
+buffer                                          0.080        4.540
+net_delay                                       0.350        4.890
+logic_delay                                     2.760        7.650
+routing_delay                                   1.900        9.550
+setup_time                                      0.300        9.850
+
+Data Arrival Time                                         9.850
+
+clock SYS_CLK (rise edge)                               10.170
+
+Data Required Time                                      10.170
+
+---------------------------------------------------------------
+
+Slack (MET)                                               0.320

@@ -1,0 +1,78 @@
+***************************************************************
+Report        : report_timing
+Design        : RISCV_PIPELINE
+Version       : 1.0
+Date          : 26-Jun-2026
+Scenario      : setup
+Analysis Type : Max
+***************************************************************
+
+Startpoint: u_id/u_instr_reg[15]/Q
+            (rising edge-triggered flip-flop)
+
+Endpoint:   u_ex/u_alu_reg[15]/D
+            (rising edge-triggered flip-flop)
+
+Path Group: SYS_CLK
+Path Type : max
+
+---------------------------------------------------------------------------
+Point                                         Incr(ns)     Path(ns)
+---------------------------------------------------------------------------
+clock SYS_CLK (rise edge)                       0.000        0.000
+clock network delay                             0.180        0.180
+
+u_id/u_instr_reg[15]/Q (CK->Q)                  0.110        0.290
+register_file                                   1.280        1.570
+immediate_generator                             0.340        1.910
+ALU_control                                     0.250        2.160
+ALU_input_mux                                   0.170        2.330
+logic_delay                                     5.120        7.450
+routing_delay                                   2.400        9.850
+
+Data Arrival Time                                         9.850
+
+clock SYS_CLK (rise edge)                               10.020
+
+Data Required Time                                      10.020
+
+---------------------------------------------------------------
+
+Slack (MET)                                               0.170
+
+
+=======================================================================
+
+
+Startpoint: u_id/u_instr_reg[31]/Q
+            (rising edge-triggered flip-flop)
+
+Endpoint:   u_ex/u_branch_reg[31]/D
+            (rising edge-triggered flip-flop)
+
+Path Group: SYS_CLK
+Path Type : max
+
+---------------------------------------------------------------------------
+Point                                         Incr(ns)     Path(ns)
+---------------------------------------------------------------------------
+clock SYS_CLK (rise edge)                       0.000        0.000
+clock network delay                             0.180        0.180
+
+u_id/u_instr_reg[31]/Q (CK->Q)                  0.120        0.300
+register_file                                   1.550        1.850
+branch_compare                                  1.780        3.630
+branch_logic                                    2.340        5.970
+mux                                              0.380        6.350
+logic_delay                                     2.900        9.250
+routing_delay                                   1.270       10.520
+
+Data Arrival Time                                        10.520
+
+clock SYS_CLK (rise edge)                               10.170
+
+Data Required Time                                      10.170
+
+---------------------------------------------------------------
+
+Slack (VIOLATED)                                        -0.350

@@ -1,0 +1,86 @@
+***************************************************************
+Report        : report_timing
+Design        : RISCV_PIPELINE
+Version       : 1.0
+Scenario      : hold
+Analysis Type : Min
+***************************************************************
+
+Startpoint: u_ex/u_alu_result_reg[31]/Q
+Endpoint:   u_ex/u_forwardA_mux[31]/D
+Path Group: SYS_CLK
+Path Type : min
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock SYS_CLK (rise edge)                 0.000         0.000
+clock network delay                       0.180         0.180
+u_ex/u_alu_result_reg[31]/Q               0.120         0.300
+ForwardA_Mux                              2.480         2.780
+routing_delay                             6.920         9.700
+
+Data Arrival Time                                      9.700
+Data Required Time                                    10.170
+
+Slack (MET)                                            0.470
+
+=====================================================================
+
+Startpoint: u_mem/u_mem_data_reg[31]/Q
+Endpoint:   u_ex/u_forwardB_mux[31]/D
+Path Group: SYS_CLK
+Path Type : min
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.180         0.180
+u_mem/u_mem_data_reg[31]/Q                0.120         0.300
+ForwardB_Mux                              3.150         3.450
+routing_delay                             6.900        10.350
+
+Data Arrival Time                                     10.350
+Data Required Time                                    10.170
+
+Slack (VIOLATED)                                      -0.180
+
+=====================================================================
+
+Startpoint: u_wb/u_writeback_reg[31]/Q
+Endpoint:   u_ex/u_forward_mux[31]/D
+Path Group: SYS_CLK
+Path Type : min
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.180         0.180
+u_wb/u_writeback_reg[31]/Q                0.130         0.310
+Forward_Select                            3.280         3.590
+routing_delay                             6.980        10.570
+
+Data Arrival Time                                     10.570
+Data Required Time                                    10.170
+
+Slack (VIOLATED)                                      -0.400
+
+=====================================================================
+
+Startpoint: u_ex/u_ctrl_reg[3]/Q
+Endpoint:   u_ex/u_forward_ctrl[3]/D
+Path Group: SYS_CLK
+Path Type : Min
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.180         0.180
+u_ex/u_ctrl_reg[3]/Q                      0.110         0.290
+Forward_Control                           2.620         2.910
+routing_delay                             6.610         9.520
+
+Data Arrival Time                                      9.520
+Data Required Time                                    10.170
+
+Slack (MET)                                            0.650

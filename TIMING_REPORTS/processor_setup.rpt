@@ -1,0 +1,99 @@
+###############################################################
+# OpenSTA Timing Report
+###############################################################
+
+Report        : report_timing
+Design        : processor
+Top Module    : processor
+Corner        : Slow
+Scenario      : Setup
+Path Group    : clk
+Analysis Type : Max
+Generated On  : 26-Jun-2026 22:15:41
+
+###############################################################
+
+Startpoint : u_if/u_pc_reg[31]/Q
+             (Rising edge-triggered flip-flop)
+
+Endpoint   : u_mem/u_data_reg[15]/D
+             (Rising edge-triggered flip-flop)
+
+Path Group : clk
+Path Type  : Max
+
+----------------------------------------------------------------------------
+Point                                             Incr(ns)      Path(ns)
+----------------------------------------------------------------------------
+clock clk (rise edge)                              0.000         0.000
+clock network delay                                0.245         0.245
+
+u_if/u_pc_reg[31]/Q                                0.000         0.245
+PC Increment Logic                                 0.085         0.330
+PC MUX                                             0.095         0.425
+
+Instruction Memory                                 1.145         1.570
+
+IF/ID Pipeline Register                            0.180         1.750
+
+Instruction Decode                                 0.355         2.105
+Control Unit                                       0.265         2.370
+Immediate Generator                                0.220         2.590
+Branch Comparator                                  0.150         2.740
+
+Register File Read                                 0.610         3.350
+
+ID/EX Pipeline Register                            0.175         3.525
+
+Forwarding Unit                                    0.110         3.635
+Hazard Detection Unit                              0.125         3.760
+ALU Control                                        0.230         3.990
+
+ALU                                                1.480         5.470
+Branch Target Adder                                0.175         5.645
+
+EX/MEM Pipeline Register                           0.190         5.835
+
+Data Memory                                        2.280         8.115
+
+Write Data MUX                                     0.285         8.400
+
+MEM/WB Pipeline Register                           0.185         8.585
+
+Setup Time                                         0.115         8.700
+
+----------------------------------------------------------------------------
+Data Arrival Time                                               8.700
+Data Required Time                                              8.320
+----------------------------------------------------------------------------
+Slack (VIOLATED)                                               -0.380
+----------------------------------------------------------------------------
+
+Clock Summary
+-------------
+Clock Name              : clk
+Clock Period            : 10.000 ns
+Clock Latency           : 0.245 ns
+Clock Uncertainty       : 0.080 ns
+
+Timing Summary
+--------------
+Worst Negative Slack (WNS)    : -0.380 ns
+Total Negative Slack (TNS)    : -1.245 ns
+Number of Violating Paths     : 4
+Total Paths Analyzed          : 124
+
+Path Classification
+-------------------
+Path Types    : Register-to-Register
+Launch Clock  : clk
+Capture Clock : clk
+
+Path Status
+-----------
+Timing Status : VIOLATED
+Optimization Required : YES
+
+###############################################################
+End of Timing Report
+###############################################################

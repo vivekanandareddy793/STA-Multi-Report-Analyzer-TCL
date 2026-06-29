@@ -1,0 +1,110 @@
+***************************************************************
+Report        : report_timing
+Design        : RISCV_PIPELINE
+Version       : 1.0
+Scenario      : hold
+Analysis Type : Min
+***************************************************************
+
+Startpoint: u_mem/u_alu_result_reg[31]/Q
+Endpoint:   u_mem/u_data_mem_addr_reg[31]/D
+Path Group: MEM_CLK
+Path Type : min
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock MEM_CLK (rise edge)                 0.000         0.000
+clock network delay                       0.220         0.220
+u_mem/u_alu_result_reg[31]/Q              0.140         0.360
+Address_Decode                            2.850         3.210
+Memory_Address_Mux                        2.540         5.750
+routing_delay                             3.850         9.600
+
+Data Arrival Time                                      9.600
+Data Required Time                                    10.170
+
+Slack (MET)                                            0.570
+
+=====================================================================
+
+Startpoint: u_mem/u_store_data_reg[31]/Q
+Endpoint:   u_mem/u_data_mem_write_reg[31]/D
+Path Group: MEM_CLK
+Path Type : min
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.220         0.220
+u_mem/u_store_data_reg[31]/Q              0.130         0.350
+Write_Data_Mux                            3.220         3.570
+Memory_Write_Control                      2.980         6.550
+routing_delay                             3.900        10.450
+
+Data Arrival Time                                     10.450
+Data Required Time                                    10.170
+
+Slack (VIOLATED)                                      -0.280
+
+=====================================================================
+
+Startpoint: u_mem/u_load_data_reg[31]/Q
+Endpoint:   u_wb/u_mem_data_reg[31]/D
+Path Group: MEM_CLK
+Path Type : min
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.220         0.220
+u_mem/u_load_data_reg[31]/Q               0.140         0.360
+Data_Memory                               3.950         4.310
+Output_Buffer                             2.640         6.950
+routing_delay                             3.470        10.420
+
+Data Arrival Time                                     10.420
+Data Required Time                                    10.170
+
+Slack (VIOLATED)                                      -0.250
+
+=====================================================================
+
+Startpoint: u_mem/u_mem_ctrl_reg[5]/Q
+Endpoint:   u_mem/u_byte_enable_reg[5]/D
+Path Group: MEM_CLK
+Path Type : min
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.220         0.220
+u_mem/u_mem_ctrl_reg[5]/Q                 0.120         0.340
+Byte_Enable_Generator                     2.450         2.790
+routing_delay                             6.680         9.470
+
+Data Arrival Time                                      9.470
+Data Required Time                                    10.170
+
+Slack (MET)                                            0.700
+
+=====================================================================
+
+Startpoint: u_mem/u_addr_reg[31]/Q
+Endpoint:   u_mem/u_cache_addr_reg[31]/D
+Path Group: MEM_CLK
+Path Type : min
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.220         0.220
+u_mem/u_addr_reg[31]/Q                    0.130         0.350
+Cache_Address_Decode                      3.540         3.890
+Cache_Controller                          3.050         6.940
+routing_delay                             3.710        10.650
+
+Data Arrival Time                                     10.650
+Data Required Time                                    10.170
+
+Slack (VIOLATED)                                      -0.480

@@ -1,0 +1,89 @@
+***************************************************************
+Report        : report_timing
+Design        : RISCV_PIPELINE
+Version       : 1.0
+Scenario      : setup
+Analysis Type : Max
+***************************************************************
+
+Startpoint: u_ex/u_rs1_reg[31]/Q
+Endpoint:   u_ex/u_alu_out_reg[31]/D
+Path Group: SYS_CLK
+Path Type : max
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock SYS_CLK (rise edge)                 0.000         0.000
+clock network delay                       0.180         0.180
+u_ex/u_rs1_reg[31]/Q                      0.120         0.300
+ALU_input_mux                             1.650         1.950
+adder                                     4.350         6.300
+logic_delay                               2.950         9.250
+routing_delay                             0.550         9.800
+
+Data Arrival Time                                      9.800
+Data Required Time                                    10.170
+
+Slack (MET)                                            0.370
+
+=====================================================================
+
+Startpoint: u_ex/u_rs2_reg[31]/Q
+Endpoint:   u_ex/u_alu_out_reg[31]/D
+Path Group: SYS_CLK
+Path Type : max
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.180         0.180
+u_ex/u_rs2_reg[31]/Q                      0.130         0.310
+ALU_input_mux                             1.820         2.130
+logic_unit                                3.920         6.050
+routing_delay                             4.370        10.420
+
+Data Arrival Time                                     10.420
+Data Required Time                                    10.170
+
+Slack (VIOLATED)                                      -0.250
+
+=====================================================================
+
+Startpoint: u_ex/u_control_reg[10]/Q
+Endpoint:   u_ex/u_alu_ctrl_reg[10]/D
+Path Group: SYS_CLK
+Path Type : max
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.180         0.180
+u_ex/u_control_reg[10]/Q                  0.120         0.300
+ALU_control                               3.250         3.550
+routing_delay                             6.900        10.450
+
+Data Arrival Time                                     10.450
+Data Required Time                                    10.170
+
+Slack (VIOLATED)                                      -0.280
+
+=====================================================================
+
+Startpoint: u_ex/u_branch_reg[31]/Q
+Endpoint:   u_ex/u_pc_mux_reg[31]/D
+Path Group: SYS_CLK
+Path Type : max
+
+---------------------------------------------------------------
+Point                                   Incr(ns)      Path(ns)
+---------------------------------------------------------------
+clock network delay                       0.180         0.180
+u_ex/u_branch_reg[31]/Q                   0.140         0.320
+branch_logic                              3.980         4.300
+routing_delay                             6.420        10.720
+
+Data Arrival Time                                     10.720
+Data Required Time                                    10.170
+
+Slack (VIOLATED)                                      -0.550
