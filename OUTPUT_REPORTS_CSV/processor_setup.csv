@@ -1,0 +1,21 @@
+STARTPOINT,ENDPOINT,SLACKS,PATHTYPE,PATHSTATUS,Arrival,Required
+u_if/u_pc_reg[31]/Q,u_mem/u_data_reg[15]/D,-0.380,Max,violated,8.700,8.320
+                  VIOLATED PATH DETAILS
+u_if/u_pc_reg[31]/Q,u_mem/u_data_reg[15]/D,-0.380,Max,violated,8.700,8.320
+CRITICAL PATH DETAILS
+critical start point       : u_if/u_pc_reg[31]/Q
+critical end point         : u_mem/u_data_reg[15]/D
+critical slack             : -0.380
+Arrival Time               : 8.700
+Required Time              : 8.320
+
+SUMMARY
+Analysis                         : Max
+Total MET Paths                  : 0
+WNS                              : -0.380
+TNS                              : -1.245
+Total Paths (from report)        : 124
+Violated Paths (from report)     : 4
+Path Status                      : violated
+Report Status                    : Fail
+Best Slack                       : 0

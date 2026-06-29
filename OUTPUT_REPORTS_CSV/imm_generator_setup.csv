@@ -1,0 +1,25 @@
+STARTPOINT,ENDPOINT,SLACKS(ns),PATHTYPE,PATHSTATUS,Arrival(ns),Required(ns)
+u_if/u_pc_reg[31]/Q,u_id/u_instr_reg[31]/D,0.255,max,MET,9.915,10.170
+u_id/u_instr_reg[20]/Q,u_ex/u_imm_reg[20]/D,-0.300,max,violated,10.470,10.170
+u_id/u_instr_reg[31]/Q,u_ex/u_signext_reg[31]/D,-0.250,max,violated,10.420,10.170
+                      VIOLATED PATH DETAILS         
+u_id/u_instr_reg[20]/Q,u_ex/u_imm_reg[20]/D,-0.300,max,violated,10.470,10.170
+u_id/u_instr_reg[31]/Q,u_ex/u_signext_reg[31]/D,-0.250,max,violated,10.420,10.170
+           CRITICAL PATH DETAILS
+critical start point : u_id/u_instr_reg[20]/Q
+critical end point   : u_ex/u_imm_reg[20]/D
+critical slack       : -0.300
+Arrival Time         : 10.470
+Required Time        : 10.170
+
+Analysis             : Max
+Total paths          : 3
+Total Violated Paths : 2
+Total MET Paths      : 1
+WNS                  : -0.300
+TNS                  : -0.55
+Path Status          : MET
+Report Status        : Fail
+Best Slack           : 0.255
+Arrival Time         : 9.915
+Required Time        : 10.170

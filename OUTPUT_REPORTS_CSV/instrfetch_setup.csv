@@ -1,0 +1,14 @@
+STARTPOINT,ENDPOINT,SLACKS(ns),PATHTYPE,PATHSTATUS,Arrival(ns),Required(ns)
+u_if/u_pc_reg[31]/Q,u_id/u_instr_reg[31]/D,0.320,max,MET,9.850,10.170
+                      VIOLATED PATH DETAILS         
+Analysis             : Max
+Total paths          : 1
+Total Violated Paths : 0
+Total MET Paths      : 1
+WNS                  : 0
+TNS                  : 0
+Path Status          : MET
+Report Status        : Pass
+Best Slack           : 0.320
+Arrival Time         : 9.850
+Required Time        : 10.170

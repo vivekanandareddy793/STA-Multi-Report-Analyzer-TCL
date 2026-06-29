@@ -1,0 +1,28 @@
+STARTPOINT,ENDPOINT,SLACKS(ns),PATHTYPE,PATHSTATUS,Arrival(ns),Required(ns)
+u_mem/u_alu_result_reg[31]/Q,u_mem/u_data_mem_addr_reg[31]/D,0.570,min,MET,9.600,10.170
+u_mem/u_store_data_reg[31]/Q,u_mem/u_data_mem_write_reg[31]/D,-0.280,min,violated,10.450,10.170
+u_mem/u_load_data_reg[31]/Q,u_wb/u_mem_data_reg[31]/D,-0.250,min,violated,10.420,10.170
+u_mem/u_mem_ctrl_reg[5]/Q,u_mem/u_byte_enable_reg[5]/D,0.700,min,MET,9.470,10.170
+u_mem/u_addr_reg[31]/Q,u_mem/u_cache_addr_reg[31]/D,-0.480,min,violated,10.650,10.170
+                      VIOLATED PATH DETAILS         
+u_mem/u_store_data_reg[31]/Q,u_mem/u_data_mem_write_reg[31]/D,-0.280,min,violated,10.450,10.170
+u_mem/u_load_data_reg[31]/Q,u_wb/u_mem_data_reg[31]/D,-0.250,min,violated,10.420,10.170
+u_mem/u_addr_reg[31]/Q,u_mem/u_cache_addr_reg[31]/D,-0.480,min,violated,10.650,10.170
+           CRITICAL PATH DETAILS
+critical start point : u_mem/u_addr_reg[31]/Q
+critical end point   : u_mem/u_cache_addr_reg[31]/D
+critical slack       : -0.480
+Arrival Time         : 10.650
+Required Time        : 10.170
+
+Analysis             : Min
+Total paths          : 5
+Total Violated Paths : 3
+Total MET Paths      : 2
+WNS                  : -0.480
+TNS                  : -1.01
+Path Status          : MET
+Report Status        : Fail
+Best Slack           : 0.700
+Arrival Time         : 9.600
+Required Time        : 10.170
