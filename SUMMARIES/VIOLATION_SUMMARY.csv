@@ -1,0 +1,36 @@
+REPORT NAME,START POINT,END POINT,SLACK(ns)
+
+ ALU_setup.rpt ,u_ex/u_rs2_reg[31]/Q,u_ex/u_alu_out_reg[31]/D,-0.250
+
+ ALU_setup.rpt ,u_ex/u_control_reg[10]/Q,u_ex/u_alu_ctrl_reg[10]/D,-0.280
+
+ ALU_setup.rpt ,u_ex/u_branch_reg[31]/Q,u_ex/u_pc_mux_reg[31]/D,-0.550
+
+ forwardingunit_hold.rpt ,u_mem/u_mem_data_reg[31]/Q,u_ex/u_forwardB_mux[31]/D,-0.180
+
+ forwardingunit_hold.rpt ,u_wb/u_writeback_reg[31]/Q,u_ex/u_forward_mux[31]/D,-0.400
+
+ hazarddetect_setup.rpt ,u_id/u_rs1_reg[31]/Q,u_id/u_stall_ctrl_reg[31]/D,-0.260
+
+ hazarddetect_setup.rpt ,u_id/u_rs2_reg[31]/Q,u_if/u_pc_enable_reg[31]/D,-0.430
+
+ hazarddetect_setup.rpt ,u_id/u_opcode_reg[6]/Q,u_id/u_control_reg[6]/D,-0.450
+
+ imm_generator_setup.rpt ,u_id/u_instr_reg[20]/Q,u_ex/u_imm_reg[20]/D,-0.300
+
+ imm_generator_setup.rpt ,u_id/u_instr_reg[31]/Q,u_ex/u_signext_reg[31]/D,-0.250
+
+ instrdecode_setup.rpt ,u_id/u_instr_reg[31]/Q,u_ex/u_branch_reg[31]/D,-0.350
+
+ memaccess_hold.rpt ,u_mem/u_store_data_reg[31]/Q,u_mem/u_data_mem_write_reg[31]/D,-0.280
+
+ memaccess_hold.rpt ,u_mem/u_load_data_reg[31]/Q,u_wb/u_mem_data_reg[31]/D,-0.250
+
+ memaccess_hold.rpt ,u_mem/u_addr_reg[31]/Q,u_mem/u_cache_addr_reg[31]/D,-0.480
+
+ registerfile_setup.rpt ,u_id/u_rs2_reg[31]/Q,u_ex/u_operandB_reg[31]/D,-0.200
+
+ registerfile_setup.rpt ,u_wb/u_writeback_reg[31]/Q,u_id/u_regfile_write_reg[31]/D,-0.250
+
+ registerfile_setup.rpt ,u_id/u_branch_reg[15]/Q,u_ex/u_branch_operand_reg[15]/D,-0.350
+

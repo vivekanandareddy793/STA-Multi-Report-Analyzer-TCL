@@ -1,0 +1,7 @@
+S.No,Report Name,Start Point,End Point,Slack(ns)
+
+1,ALU_setup.rpt,u_ex/u_branch_reg[31]/Q,u_ex/u_pc_mux_reg[31]/D,-0.550
+2,memaccess_hold.rpt,u_mem/u_addr_reg[31]/Q,u_mem/u_cache_addr_reg[31]/D,-0.480
+3,hazarddetect_setup.rpt,u_id/u_opcode_reg[6]/Q,u_id/u_control_reg[6]/D,-0.450
+4,hazarddetect_setup.rpt,u_id/u_rs2_reg[31]/Q,u_if/u_pc_enable_reg[31]/D,-0.430
+5,forwardingunit_hold.rpt,u_wb/u_writeback_reg[31]/Q,u_ex/u_forward_mux[31]/D,-0.400

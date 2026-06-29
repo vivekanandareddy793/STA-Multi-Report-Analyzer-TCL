@@ -1,0 +1,12 @@
+Report Name,  Module,Analysis,scenario,Best Slack(ns),WNS(ns),TNS(ns),TotalPaths,ViolatedPaths,HoldViolations,SetupViolations,ReportStatus 
+
+ALUctrl_hold.rpt,ALUctrl_hold,Min,hold,0.280,0,0,1,0,0,0,Pass
+ALU_setup.rpt,ALU_setup,Max,setup,0.370,-0.550,-1.08,4,3,0,3,Fail
+forwardingunit_hold.rpt,forwardingunit_hold,Min,hold,0.650,-0.400,-0.5800000000000001,4,2,0,2,Fail
+hazarddetect_setup.rpt,hazarddetect_setup,Max,setup,0.700,-0.450,-1.14,5,3,0,3,Fail
+imm_generator_setup.rpt,imm_generator_setup,Max,setup,0.255,-0.300,-0.55,3,2,0,2,Fail
+instrdecode_setup.rpt,instrdecode_setup,Max,setup,0.170,-0.350,-0.35,2,1,0,1,Fail
+instrfetch_setup.rpt,instrfetch_setup,Max,setup,0.320,0,0,1,0,0,0,Pass
+memaccess_hold.rpt,memaccess_hold,Min,hold,0.700,-0.480,-1.01,5,3,0,3,Fail
+processor_setup.rpt,processor_setup,Max,Setup,0,-0.380,-1.245,124,4,0,4,Fail
+registerfile_setup.rpt,registerfile_setup,Max,setup,0.510,-0.350,-0.8,5,3,0,3,Fail
