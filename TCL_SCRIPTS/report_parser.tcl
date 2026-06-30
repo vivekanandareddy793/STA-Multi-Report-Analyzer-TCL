@@ -101,7 +101,7 @@ puts "Data Required Time :$data_required \n"
 puts "Analysis Type      :$AnalysisType \n"
 
 # Create output CSV
-set out [open "OUTPUT_REPORTS/${rptname}.csv" w]
+set out [open "OUTPUT_REPORTS_CSV/${rptname}.csv" w]
 
 # Write all paths into CSV
 puts $out "STARTPOINT,ENDPOINT,SLACKS(ns),PATHTYPE,PATHSTATUS,Arrival(ns),Required(ns)"
@@ -325,7 +325,7 @@ puts "Data Required Time :$data_required \n"
 puts "Analysis Type      :$AnalysisType \n"
 
 # Create processor output CSV
-set out [open "OUTPUT_REPORTS/$rptname.csv" w]
+set out [open "OUTPUT_REPORTS_CSV/$rptname.csv" w]
 
 # Write all path details
 puts $out "STARTPOINT,ENDPOINT,SLACKS,PATHTYPE,PATHSTATUS,Arrival,Required"
