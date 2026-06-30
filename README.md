@@ -94,7 +94,7 @@ Top 5 worst slack paths collected across all reports, sorted by slack value.
 tclsh TCL_SCRIPTS/Run_All.tcl
 
 3. When prompted, enter the slack threshold for violation detection
-4. Check `OUTPUT_REPORTS/` and `SUMMARIES/` for the generated CSVs
+4. Check `OUTPUT_REPORTS_CSV/` and `SUMMARIES/` for the generated CSVs
 
 
 ## Technologies Used
