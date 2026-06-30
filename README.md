@@ -63,7 +63,7 @@ project/
 │
 ├── TCL_SCRIPTS/
     ├── Run_All.tcl         # Main script — run this
-    └── report_parser.tcl   # Parsing logic
+    ├── report_parser.tcl   # Parsing logic
 
 
 
