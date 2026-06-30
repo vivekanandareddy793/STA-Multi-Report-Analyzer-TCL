@@ -47,7 +47,7 @@ foreach rpt [glob TIMINGREPORTS/*.rpt] {
 set AllPaths {}
 
 # Read every generated CSV file
-foreach csv [glob OUTPUT_REPORTS/*.csv] {
+foreach csv [glob OUTPUT_REPORTS_CSV/*.csv] {
 
     # Open the CSV file
     set fp [open "$csv" r]
