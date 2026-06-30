@@ -54,7 +54,7 @@ project/
 │
 ├── TIMINGREPORTS/          # Put your STA timing reports here
 │
-├── OUTPUT_REPORTS/         # Individual CSVs generated per report
+├── OUTPUT_REPORTS_CSV/         # Individual CSVs generated per report
 │
 ├── SUMMARIES/
 │   ├── MASTER_SUMMARY.csv
